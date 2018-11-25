@@ -27,6 +27,8 @@ var pictureTemplateElement = document.querySelector('#picture').content;
 var picturesElement = document.querySelector('.pictures');
 var bigPictureElement = document.querySelector('.big-picture');
 
+var pictureNumbers;
+
 var showElement = function (element) {
   element.classList.remove('hidden');
 };
@@ -55,8 +57,6 @@ var getRandomInRange = function (min, max) {
   var array = createArrayFromRange(min, max);
   return getRandomValue(array);
 };
-
-var pictureNumbers = createArrayFromRange(MIN_PICTURE_NUM, MAX_PICTURE_NUM);
 
 var getUniqueRandomValue = function (array) {
   var uniqueRandomValue = getRandomValue(array);
@@ -151,6 +151,7 @@ var generateBigPictureData = function (picture) {
 };
 
 var init = function () {
+  pictureNumbers = createArrayFromRange(MIN_PICTURE_NUM, MAX_PICTURE_NUM);
   var similarPictures = createPicturesArray(MAX_PICTURE_NUM);
   renderSimilarPictures(similarPictures);
   generateBigPictureData(similarPictures[0]);
