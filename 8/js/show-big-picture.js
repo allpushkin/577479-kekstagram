@@ -41,14 +41,14 @@
     window.utilities.hideElement(bigPictureElement.querySelector('.comments-loader'));
   };
 
-  var documentClickHandler = function (evt) {
+  var documentClickHandler = function () {
 
   };
 
   var init = function () {
     document.addEventListener('click', documentClickHandler);
-    // generateBigPictureData(window.gallery[0]);
-  //  window.utilities.showElement(bigPictureElement);
+    generateBigPictureData(window.gallery[0]);
+    window.utilities.showElement(bigPictureElement);
   };
 
   init();
